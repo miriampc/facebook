@@ -5,23 +5,33 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Document</title>
+  <link rel="stylesheet" href="assets/css/main.css">
+  <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,700" rel="stylesheet">
 </head>
 <body>
-  <nav><div id="dropdown">Hola user <span id="user"></span></div></nav>
+  <nav align="right"><div id="dropdown">Hola user <span id="user"></span></div></nav>
   <section>
     <form action="">
-      <div>
-        <div id="estado">
-          <textarea name="" id="" cols="30" rows="10"></textarea>
-          <select name="" id=""></select>
-          <button>Publicar</button>
+      <div align="center" class="contend">
+        <h1>Postea!!</h1><hr>
+        <div id="estado" clas="contend">
+          <textarea name="" id="publicacion" cols="30" rows="5" placeholder="¿Qué esta pasando?"></textarea>
+          <br>
+          <select name="" id="">
+            <option value="">Seleccione</option>
+            <option value="1">Amigos</option>
+            <option value="2">Público</option>
+          </select>
+          <button id="btnPublica">Publicar</button>
         </div>
-        <div id="contenidos">
-          <a href="#">Público</a>
-          <a href="#">Amigos</a>
+        <br>
+        <a href="#">Público</a>
+        <a href="#">Amigos</a><br><br>
+        <div id="contenidos" class="contend">
         </div>
       </div>
     </form>
   </section>
+  <script type="text/javascript" src="assets/js/posts.js"></script>
 </body>
 </html>

@@ -9,10 +9,13 @@ window.addEventListener('load',function(){
     var msj1=document.getElementById('msj-email');
     var msj2=document.getElementById('msj-pswd');
 
+    function mostrarMsj(){
+
+    }
+
     function validaEmail(valor){
       if(valor == ""){
         msj1.innerHTML="Debe ingresar su email";
-        //msj1.innerHTML="";
         return false;
       }else if(!(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(valor))) {
         msj1.innerHTML="Ingrese en el formato adecuado";
@@ -26,20 +29,34 @@ window.addEventListener('load',function(){
         msj2.innerHTML="Ingrese su password, debe ser más de 6 carateres";
         return false;
       }else{
+        var status;
         for (var i in usuarios) {
           if(usuarios[i].email!=email && usuarios[i].pswd!=password){
-            msj2.innerHTML="El email y/o password ingresados son incorrectos";
-            return false;
-          }else {
-            alert("aki");
-            alert("sii"+usuarios[i].email+"--"+ usuarios[i].pswd);// break;
+            status=false;
+          }else if(usuarios[i].email==email && usuarios[i].pswd==password){
+            status=true;
+            break;
           }
         }
-        msj2.innerHTML="";
-        window.location="index.html";
+        if(status==false){
+          msj2.innerHTML="El email y/o password ingresados son incorrectos";
+          return false;
+        }else {
+          msj2.innerHTML="";
+          /*var user=document.getElementById('user');
+          if (localStorage.getItem("userEmail")){
+            user.innerText=localStorage.getItem("userEmail");
+          }else {
+            localStorage.setItem("userEmail",email);
+            user.innerText=localStorage.getItem("userEmail");
+          }*/
+          window.location="index.html";
+        }
       }
     }
-
     validaEmail(email);
   };
+
+
+
 });
